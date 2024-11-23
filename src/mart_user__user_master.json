@@ -1,0 +1,296 @@
+{
+    "database_schema":
+    {
+        "name": "gold",
+        "tables":
+        [
+            {
+                "table_name": "mart_user__user_master",
+                "description": "KarrotPay User Master",
+                "columns":
+                [
+                    {
+                        "name": "user_id",
+                        "type": "VARCHAR",
+                        "description": "Unique identifier for the user.",
+                        "examples":
+                        [
+                            "10238",
+                            "10246"
+                        ]
+                    },
+                    {
+                        "name": "user_unique_id",
+                        "type": "VARCHAR",
+                        "description": "Unique identifier mapped to user's Connecting Information (CI), which is a Korea-specific personal identification number.",
+                        "examples":
+                        [
+                            "39",
+                            "40"
+                        ]
+                    },
+                    {
+                        "name": "last_mobile_auth_token_refresh_at",
+                        "type": "TIMESTAMP",
+                        "description": "The date and time of the last mobile authentication token refresh (Format: YYYY-MM-DD HH:MM:SS.ssssss).",
+                        "examples":
+                        [
+                            "2024-11-06T07:20:23.035250",
+                            "2024-05-23T13:17:19.081561"
+                        ]
+                    },
+                    {
+                        "name": "user_status",
+                        "type": "VARCHAR",
+                        "description": "User account status.",
+                        "valid_values":
+                        [
+                            "INIT",
+                            "NORMAL",
+                            "LOCK",
+                            "HOLD",
+                            "DORMANT",
+                            "WITHDRAW",
+                            "TEMP",
+                            "TEMP_FOR_WALLET",
+                            "TEMP_FOR_PAYMENT"
+                        ]
+                    },
+                    {
+                        "name": "member_type",
+                        "type": "VARCHAR",
+                        "description": "User membership type.",
+                        "valid_values":
+                        [
+                            "MEMBER",
+                            "NON_MEMBER"
+                        ]
+                    },
+                    {
+                        "name": "password_status",
+                        "type": "VARCHAR",
+                        "description": "Password state of user account",
+                        "valid_values":
+                        [
+                            "EXIST",
+                            "HAD_HISTORY",
+                            "NONE"
+                        ]
+                    },
+                    {
+                        "name": "fleamarket_user_id",
+                        "type": "VARCHAR",
+                        "description": "Linked Karrot Market account ID for this Karrot Pay user.",
+                        "examples":
+                        [
+                            "6422",
+                            "1804"
+                        ]
+                    },
+                    {
+                        "name": "created_at",
+                        "type": "TIMESTAMP",
+                        "description": "The date and time when the account was created (timestamp in the format YYYY-MM-DD HH:MM:SS.ssssss).",
+                        "examples":
+                        [
+                            "2022-01-13T06:17:56",
+                            "2022-01-20T08:19:32"
+                        ]
+                    },
+                    {
+                        "name": "updated_at",
+                        "type": "TIMESTAMP",
+                        "description": "The date and time when the account information was last updated (timestamp in the format YYYY-MM-DD HH:MM:SS.ssssss).",
+                        "examples":
+                        [
+                            "2024-11-06T07:20:27.647879",
+                            "2024-05-23T09:44:34.200793"
+                        ]
+                    },
+                    {
+                        "name": "verification_type",
+                        "type": "VARCHAR",
+                        "description": "Identity verification method.",
+                        "valid_values":
+                        [
+                            "PHONE",
+                            "BANK",
+                            "BANKBOOK",
+                            "CARD"
+                        ]
+                    },
+                    {
+                        "name": "verification_status",
+                        "type": "VARCHAR",
+                        "description": "Identity verification status.",
+                        "valid_values":
+                        [
+                            "SUCCESS",
+                            "FAIL",
+                            "CI_CHANGED",
+                            "EXPIRED"
+                        ]
+                    },
+                    {
+                        "name": "gender",
+                        "type": "VARCHAR",
+                        "description": "User's gender.",
+                        "valid_values":
+                        [
+                            "MALE",
+                            "FEMALE"
+                        ]
+                    },
+                    {
+                        "name": "is_foreigner",
+                        "type": "BOOLEAN",
+                        "description": "Indicates if user is a foreigner.",
+                        "valid_values":
+                        [
+                            "0",
+                            "1"
+                        ]
+                    },
+                    {
+                        "name": "telecom",
+                        "type": "VARCHAR",
+                        "description": "Mobile carrier of user.",
+                        "valid_values":
+                        [
+                            "SKT",
+                            "KT",
+                            "LGU",
+                            "A_SKT",
+                            "A_KT",
+                            "A_LGU"
+                        ]
+                    },
+                    {
+                        "name": "nationality",
+                        "type": "VARCHAR",
+                        "description": "Nationality of the user."
+                    },
+                    {
+                        "name": "occupation",
+                        "type": "VARCHAR",
+                        "description": "User's occupation category.",
+                        "valid_values":
+                        [
+                            "OFFICE_WORKER",
+                            "HOUSEWIFE_OR_STUDENT",
+                            "SOLE_PROPRIETOR",
+                            "CIVIL_SERVANT",
+                            "PROFESSIONAL",
+                            "VIRTUAL_ASSET_INDUSTRY_WORKER",
+                            "HIGH_RISK_WORKER",
+                            "INVESTMENT_INCOME_EARNERS",
+                            "PRECIOUS_METAL_SALES_WORKER",
+                            "PENSION_BENEFICIARY",
+                            "ETC"
+                        ]
+                    },
+                    {
+                        "name": "using_purpose",
+                        "type": "VARCHAR",
+                        "description": "Purpose of account usage.",
+                        "valid_values":
+                        [
+                            "SALARY_AND_LIVING_EXPENSES",
+                            "PAYING_PRODUCT_AND_SERVICE",
+                            "ETC",
+                            "PAYING_CREDIT_CARD_BILL",
+                            "BUSINESS_TRANSACTION",
+                            "INHERITANCE_AND_GIFT_TRANSACTION",
+                            "SAVING_AND_INVESTMENT",
+                            "PAYING_DUES",
+                            "LOAN_PRINCIPAL_AND_INTEREST_REPAYMENT"
+                        ]
+                    },
+                    {
+                        "name": "funding_source",
+                        "type": "VARCHAR",
+                        "description": "Source of funds.",
+                        "valid_values":
+                        [
+                            "EARNED_AND_PENSION_INCOME",
+                            "BUSINESS_INCOME",
+                            "INHERITANCE_AND_GIFT",
+                            "REAL_ESTATE_TRANSFER_INCOME",
+                            "REAL_ESTATE_RENTAL_INCOME",
+                            "RETIREMENT_INCOME",
+                            "STUDY_ABROAD_FUNDS",
+                            "FINANCIAL_INCOME",
+                            "ETC",
+                            ""
+                        ]
+                    },
+                    {
+                        "name": "service_type",
+                        "type": "VARCHAR",
+                        "description": "Type of service used by the user.",
+                        "valid_values":
+                        [
+                            "ACCOUNT_WEB",
+                            ""
+                        ]
+                    },
+                    {
+                        "name": "os_type",
+                        "type": "VARCHAR",
+                        "description": "Operating system type of the user's device.",
+                        "valid_values":
+                        [
+                            "ANDROID",
+                            "IOS",
+                            "UNKNOWN",
+                            ""
+                        ]
+                    }
+                ],
+                "sample_queries":
+                [
+                    {
+                        "natural_language": "비밀번호 상태별 사용자 수를 알려주세요.",
+                        "sql": "SELECT password_status, COUNT(*) FROM gold.mart_user__user_master GROUP BY password_status"
+                    },
+                    {
+                        "natural_language": "연도별 정상 사용자 수를 알려주세요.",
+                        "sql": "SELECT EXTRACT(YEAR FROM created_at) AS creation_year, COUNT(*) AS normal_user_count FROM gold.mart_user__user_master WHERE user_status != 'WITHDRAW' AND member_type = 'MEMBER' GROUP BY EXTRACT(YEAR FROM created_at) ORDER BY creation_year;"
+                    },
+                    {
+                        "natural_language": "인증 상태와 유형별 사용자 수를 알려주세요.",
+                        "sql": "SELECT verify_status, verify_type, COUNT(*) AS user_count FROM gold.mart_user__user_master GROUP BY verify_status, verify_type ORDER BY user_count DESC;"
+                    },
+                    {
+                        "natural_language": "외국인 비율을 분석해주세요.",
+                        "sql": "SELECT is_foreigner, COUNT(*) AS user_count, ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER(), 2) AS percentage FROM gold.mart_user__user_master WHERE member_type = 'MEMBER' AND user_status NOT IN ('WITHDRAW', 'DORMANT', 'TEMP') GROUP BY is_foreigner;"
+                    },
+                    {
+                        "natural_language": "앱 버전별 사용자 수를 알려주세요.",
+                        "sql": "SELECT app_version, COUNT(*) AS user_count FROM gold.mart_user__user_master GROUP BY app_version ORDER BY user_count DESC;"
+                    },
+                    {
+                        "natural_language": "OS 유형별 사용자 수를 알려주세요.",
+                        "sql": "SELECT os_type, COUNT(*) AS user_count FROM gold.mart_user__user_master WHERE member_type = 'MEMBER' AND user_status NOT IN ('WITHDRAW', 'DORMANT', 'TEMP') GROUP BY os_type ORDER BY user_count DESC;"
+                    },
+                    {
+                        "natural_language": "직업별 사용자 분포를 알려주세요.",
+                        "sql": "SELECT occupation, COUNT(*) AS user_count FROM gold.mart_user__user_master WHERE member_type = 'MEMBER' AND user_status NOT IN ('WITHDRAW', 'DORMANT', 'TEMP') AND occupation IS NOT NULL GROUP BY occupation ORDER BY user_count DESC;"
+                    },
+                    {
+                        "natural_language": "연간 신규 사용자 수를 알려주세요.",
+                        "sql": "SELECT EXTRACT(YEAR FROM created_at) AS creation_year, COUNT(*) AS new_user_count FROM gold.mart_user__user_master GROUP BY EXTRACT(YEAR FROM created_at) ORDER BY creation_year DESC;"
+                    },
+                    {
+                        "natural_language": "최근 30일 동안 업데이트된 사용자 수를 알려주세요.",
+                        "sql": "SELECT COUNT(*) AS recently_updated_users FROM gold.mart_user__user_master WHERE updated_at >= DATEADD(day, -30, GETDATE());"
+                    },
+                    {
+                        "natural_language": "최근 30일 동안 접속한 사용자 수를 알려주세요.",
+                        "sql": "SELECT COUNT(*) AS recently_access_users FROM gold.mart_user__user_master WHERE last_mobile_auth_token_refresh_at >= DATEADD(day, -30, GETDATE());"
+                    }
+                ]
+            }
+        ]
+    }
+}
